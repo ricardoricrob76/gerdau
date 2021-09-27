@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Autor: Ricardo Roberto de Lima - Machine Learning - Classificacao Pessoas Crioterapia</title>
+<!-- Referência ao Bootstrap CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Definição de estilo para fonte -->
+<style>
+        .lb-sm{
+            font-size: 9pt;
+            font-family: "Helvetica";
+        }
+</style>
+</head>
+<body>
+   <!-- div container -->
+   <div class="container">
+       <!-- Criação de uma div painel -->
+       <div class="panel panel-info">
+           <!-- Título da div painel -->
+           <div class="panel-heading"><b> - Modelos de Machine Learning - Tratamento de Pessoas com Crioterapia para Verrugas</b></div>
+           <!-- Corpo da div painel -->
+           <div class="panel-body">
+               <div id="form-container">
+                   <!-- Definição -->
+                   <form action="/form/" method="post">
+                       <div class="form-group input-group-sm">
+                           <!-- Nome da Pessoa. Este campo não afetará a tarefa de classificação -->
+                           <label class="lb-sm">Nome da Pessoa:</label>
+                           <input name="nome" type="text" class="form-control" placeholder="Nome da Pessoa" required />
+                       </div>
+                       <div class="form-group input-group-sm">
+
+                           <!-- Campo para o Sexo  do sangue -->
+                           <label class="lb-sm">Genero - Masculino ou Feminino?</label>
+                           <select name="sexo" class="form-control">
+                               <option value="0">--Selecione--</option>
+                               <option value="1">Masculino</option>
+                               <option value="2">Feminino</option>
+                           </select>
+                       </div>
+                       <div class="form-group input-group-sm">
+                        <!-- Idade da Pessoa -->
+                        <label class="lb-sm">Idade do individuo:</label>
+                        <input name="idade" type="text" class="form-control" placeholder="Idade da Pessoa" required />
+                      </div>
+                      <div class="form-group input-group-sm">
+                        <!-- Tempo com as Verrugas -->
+                        <label class="lb-sm">Tempo com as verrugas do individuo:</label>
+                        <input name="tempo" type="text" class="form-control" placeholder="Tempo das Verrugas" required />
+                      </div>
+                      <div class="form-group input-group-sm">
+                        <!-- Número de Verrugas -->
+                        <label class="lb-sm">Número de Verrugas do Individuo:</label>
+                        <input name="nverrugas" type="text" class="form-control" placeholder="Número das Verrugas" required />
+                      </div>
+                  
+                       <div class="form-group input-group-sm">
+                           <!-- Campo para saber se o tipo do vírus é 1, 2, 3 -->
+                           <label class="lb-sm">Tipo de Vírus Verruga?</label>
+                           <select name="tipo" class="form-control">
+                               <option value="0">--Selecione--</option>
+                               <option value="1">Vírus 1</option>
+                               <option value="2">Vírus 2</option>
+                               <option value="3">Vírus 3</option>
+                           </select>
+                       </div>
+                       <div class="form-group input-group-sm">
+                        <!-- Área das Verrugas -->
+                        <label class="lb-sm">Tamanho em cm das verrugas do individuo Área:</label>
+                        <input name="area" type="text" class="form-control" placeholder="Area das Verrugas" required />
+                      </div>
+                       <hr />
+
+                       <div class="form-group input-group-sm">
+                           <button type="submit" class="btn btn-sm btn-primary pull-right">Classificar</button>
+                       </div>
+
+                       <!-- Apresentação dos Resultados -->
+                       <div class="form-group">
+                           <label>Resultado:</label>
+                       </div>
+
+                       <!-- Apresentação do nome do animal -->
+                       <div class="form-group">
+                           <span class="lb-sm"><strong>Pessoa:</strong> {{nome}}</span>
+                       </div>
+
+                       <!-- Apresentação da classificação do animal -->
+                       <div class="form-group">
+                           <span class="lb-sm"><strong>Classificacao:</strong> {{classificacao}}</span>
+
+                       <!-- Apresentação do valor da probabilidade-->
+                       <div class="form-group">
+                           <span class="lb-sm"><strong>Probabilidade:</strong> {{probabilidade}}</span>
+
+                       </div>
+                    </form>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </body>
+</html>
